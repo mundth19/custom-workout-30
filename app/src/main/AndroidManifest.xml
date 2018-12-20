@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Intensity" />
+        <activity android:name=".Cardio" />
+        <activity android:name=".MuscleGroup" />
+        <activity android:name=".History"></activity>
     </application>
 
 </manifest>

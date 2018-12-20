@@ -9,7 +9,7 @@ import android.content.ContentValues;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DB_NAME = "workouts"; // the name of our database
-    private static final int DB_VERSION = 1;
+    private static final int DB_VERSION = 1; //version of database
     DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -18,14 +18,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE CARDIO ("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + " NAME TEXT, "
-                + "LEVEL TEXT, "
                 + "INTENSITY TEXT, "
                 + "DESCRIPTION TEXT);");
 
         ContentValues cardioValues = new ContentValues();
         cardioValues.put("NAME", "Running");
-        cardioValues.put("LEVEL", "Beginner");
-        cardioValues.put("INTENSITY", "12min/mile");
+        cardioValues.put("INTENSITY", "Beginner");
         cardioValues.put("DESCRIPTION", "Run at a 12 minute mile pace for 10 minutes.");
         db.insert("CARDIO", null, cardioValues);
 
