@@ -20,16 +20,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + " NAME TEXT, "
                 + "INTENSITY TEXT, "
                 + "DESCRIPTION TEXT);");
-
-        ContentValues cardioValues = new ContentValues();
-        cardioValues.put("NAME", "Running");
-        cardioValues.put("INTENSITY", "Beginner");
-        cardioValues.put("DESCRIPTION", "Run at a 12 minute mile pace for 10 minutes.");
-        db.insert("CARDIO", null, cardioValues);
+        insertCardio(db, "Running", "Beginner", "Run at a 15 minute mile pace for 10 minutes", 1);
+        insertCardio(db, "Running", "Intermediate", "Run at a 11 minute mile pace for 10 minutes", 2);
+        insertCardio(db, "Running", "Advanced", "Run at a 7.5 minute mile pace for 10 minutes", 3);
+        insertCardio(db, "Biking", "Beginner", "Bike at a 10 mph speed for 10 minutes", 4);
+        insertCardio(db, "Biking", "Intermediate", "Bike at a 13 mph speed for 10 minutes", 5);
+        insertCardio(db, "Biking", "Advanced", "Bike at a 15 mph speed for 10 minutes", 6);
+        insertCardio(db, "Elliptical", "Beginner", "Exercise on an elliptical at speed 5 for 10 minutes", 7);
+        insertCardio(db, "Elliptical", "Intermediate", "Exercise on an elliptical at speed 7 for 10 minutes", 8);
+        insertCardio(db, "Elliptical", "Advanced", "Exercise on an elliptical at speed 9 for 10 minutes", 9);
 
     }
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {    } }
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { {   } }
+
+    private static void insertCardio (SQLiteDatabase db, String name, String intensity, String description, int resourceId ){
+        ContentValues cardioValues = new ContentValues();
+        cardioValues.put("NAME", name);
+        cardioValues.put("INTENSITY", intensity);
+        cardioValues.put("DESCRIPTION", description);
+        db.insert("CARDIO", null, cardioValues);
+    }}
 
 
 //public class DataActivity extends Activity {
