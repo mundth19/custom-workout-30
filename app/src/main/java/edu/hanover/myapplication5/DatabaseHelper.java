@@ -64,7 +64,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insertLifting(db, "Lower Body", "Advanced", "10 lunges per leg with dumbbells; 3 sets", 24);
         insertLifting(db, "Lower Body", "Beginner", "10 weighted calf raises; 3 sets", 25);
         insertLifting(db, "Lower Body", "Intermediate", "15 weighted calf raises; 3 sets", 26);
-        insertLifting(db, "Lower Body", "Advanced", "20 weigted calf raises; 3 sets", 27);
+        insertLifting(db, "Lower Body", "Advanced", "20 weighted calf raises; 3 sets", 27);
 
         db.execSQL("CREATE TABLE YOGA ("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -72,6 +72,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + "INTENSITY TEXT, "
                 + "DESCRIPTION TEXT);");
         //insert yoga exercises here
+        insertYoga(db, "Upper Body","Overhead triceps and shoulder stretch; hold for 10 seconds; 3 sets/arm", 1);
+        insertYoga(db, "Upper Body",  "Cross-body shoulder stretch; hold for 10 seconds; 3 sets/arm", 2);
+        insertYoga(db, "Mid Body", "Stand and stretch (include link); hold for 30 seconds; 3 sets",  3);
+        insertYoga(db, "Mid Body", "Lie and stretch (include link); hold for 30 seconds; 3 sets ", 4);
+        insertYoga(db, "Lower Body", "Flamingo stretch; hold for 10 seconds; 3 sets/leg", 5);
+        insertYoga(db, "Lower Body", "Wall stretch; hold for 10 seconds; 3 sets/leg", 6);
 
     }
     @Override
@@ -94,11 +100,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert("LIFTING", null, liftingValues);
     }
 
-    private static void insertYoga (SQLiteDatabase db, String name, String intensity, String description, int resourceId ) {
+    private static void insertYoga (SQLiteDatabase db, String name, String description, int resourceId ) {
         ContentValues yogaValues = new ContentValues();
         yogaValues.put("_id", resourceId);
         yogaValues.put("NAME", name);
-        yogaValues.put("INTENSITY", intensity);
         yogaValues.put("DESCRIPTION", description);
         db.insert("YOGA", null, yogaValues);
     }
