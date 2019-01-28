@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">MyApplication5</string>
+    <string-array name="options">
+        <item>Running</item>
+        <item>Biking</item>
+        <item>Elliptical</item>
+    </string-array>
 </resources>

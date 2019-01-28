@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
     tools:context=".Cardio">
 
     <TextView
@@ -20,6 +22,7 @@
         android:textColor="@color/colorAccent"
         android:textSize="27sp"
         android:textStyle="bold"
+        android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -36,14 +39,16 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="casual"
-        android:text="Running"
         android:onClick="onClickRunning"
+        android:text="Running"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <Button
         android:id="@+id/button7"
@@ -58,6 +63,7 @@
         android:onClick="onClickBiking"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -78,6 +84,7 @@
         android:onClick="onClickElliptical"
         android:textSize="18sp"
         android:textStyle="bold"
+        android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -86,9 +93,11 @@
         app:layout_constraintVertical_bias="0.842" />
 
     <ImageView
+        android:id="@+id/simple_list_item_2"
         android:layout_width="85dp"
         android:layout_height="83dp"
         android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -100,4 +109,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.337" />
-</android.support.constraint.ConstraintLayout>
+
+    <!--<ListView
+        android:id="@+id/simple_list_item_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+    -->
+
+</LinearLayout>
