@@ -35,8 +35,9 @@ public class Cardio extends AppCompatActivity {
         Cursor c = db.rawQuery("select name from cardio", null);
         ArrayList ar = new ArrayList();
         while (c.moveToNext()) {
-
-            ar.add(c.getString(0));
+            if (!(ar.contains(c.getString(0)))){
+                ar.add(c.getString(0));
+            }
         }
         ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1,ar);
         lv.setAdapter(ad);
