@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.app.ListActivity;
 import android.os.Bundle;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.view.View;
@@ -41,6 +42,15 @@ public class Cardio extends AppCompatActivity {
         }
         ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1,ar);
         lv.setAdapter(ad);
+
+        AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(Cardio.this, MuscleGroup.class);
+                startActivity(intent);
+            }
+        };
+        lv.setOnItemClickListener(itemClickListener);
 
     }
 }
