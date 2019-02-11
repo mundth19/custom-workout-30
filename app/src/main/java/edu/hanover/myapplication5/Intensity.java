@@ -31,6 +31,7 @@ public class Intensity extends AppCompatActivity {
 
     ListView lv;
     SQLiteDatabase db;
+    ArrayList Iar = new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,19 +40,23 @@ public class Intensity extends AppCompatActivity {
         lv = (ListView)findViewById(R.id.listview2);
         db = openOrCreateDatabase("workouts",MODE_PRIVATE,null);
         Cursor c = db.rawQuery("select intensity from cardio", null);
-        ArrayList ar = new ArrayList();
+        //ArrayList ar = new ArrayList();
         while (c.moveToNext()) {
-            if (!(ar.contains(c.getString(0)))){
-                ar.add(c.getString(0));
+            if (!(Iar.contains(c.getString(0)))){
+                Iar.add(c.getString(0));
             }
         }
-        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1,ar);
+        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1,Iar);
         lv.setAdapter(ad);
 
         AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(Intensity.this, Cardio.class);
+
+                String IntListView = Iar.get(position).toString();
+                intent.putExtra("intensityclickvalue", IntListView);
+
                 startActivity(intent);
             }
         };

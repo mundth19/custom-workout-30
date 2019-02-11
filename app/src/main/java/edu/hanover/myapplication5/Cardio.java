@@ -17,6 +17,7 @@ import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.widget.CursorAdapter;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.SimpleCursorAdapter;
 
@@ -26,31 +27,47 @@ import java.util.List;
 public class Cardio extends AppCompatActivity {
     ListView lv;
     SQLiteDatabase db;
+    ArrayList Car = new ArrayList();
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_cardio_items);
+
+        textView = (TextView)findViewById(R.id.txtitem1);
+        String intensityholder = getIntent().getStringExtra("intensityclickvalue");
+        textView.setText(intensityholder);
+
         lv = (ListView)findViewById(R.id.listview1);
         db = openOrCreateDatabase("workouts",MODE_PRIVATE,null);
         Cursor c = db.rawQuery("select name from cardio", null);
-        ArrayList ar = new ArrayList();
+        //ArrayList ar = new ArrayList();
         while (c.moveToNext()) {
-            if (!(ar.contains(c.getString(0)))){
-                ar.add(c.getString(0));
+            if (!(Car.contains(c.getString(0)))){
+                Car.add(c.getString(0));
             }
         }
-        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1,ar);
+        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1,Car);
         lv.setAdapter(ad);
 
         AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(Cardio.this, MuscleGroup.class);
+
+
+                String CarListView = Car.get(position).toString();
+                intent.putExtra("cardioclickvalue", CarListView);
+
                 startActivity(intent);
+
             }
         };
         lv.setOnItemClickListener(itemClickListener);
+
+
+
 
     }
 }

@@ -26,6 +26,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.128" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtitem1"
+        android:textSize="30dp"
+        android:hint="Item Value"/>
+
     <ListView
         android:id="@+id/listview1"
         android:layout_width="match_parent"

@@ -20,6 +20,7 @@
         <activity android:name=".Cardio" />
         <activity android:name=".MuscleGroup" />
         <activity android:name=".History" />
+        <activity android:name=".Workout" />
     </application>
 
 </manifest>
