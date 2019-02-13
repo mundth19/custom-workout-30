@@ -30,7 +30,7 @@ import android.widget.SimpleCursorAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MuscleGroup extends AppCompatActivity {
+public class MuscleGroup extends Cardio {
 
     ListView lv;
     SQLiteDatabase db;

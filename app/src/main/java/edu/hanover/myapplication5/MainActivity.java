@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void onClickIntensity(View v){
-        Intent intent = new Intent(this, Intensity.class);
+        Intent intent = new Intent(this, ExerciseSelect.class);
         startActivity(intent);
     }
     public void onClickHistory(View v){

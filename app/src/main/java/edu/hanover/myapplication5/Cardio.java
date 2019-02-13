@@ -24,20 +24,26 @@ import android.widget.SimpleCursorAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Cardio extends AppCompatActivity {
+import static edu.hanover.myapplication5.Intensity.Iar;
+
+public class Cardio extends Intensity {
     ListView lv;
     SQLiteDatabase db;
     ArrayList Car = new ArrayList();
-    TextView textView;
+    TextView textViewi;
+    //int intpos = Integer.parseInt(getIntent().getStringExtra("intensityclickvalue"));
+    //public int intensitypos = Iar.indexOf(getIntent().getStringExtra("intensityclickvalue"));
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_cardio_items);
 
-        textView = (TextView)findViewById(R.id.txtitem1);
+        textViewi = (TextView)findViewById(R.id.txtitem1);
         String intensityholder = getIntent().getStringExtra("intensityclickvalue");
-        textView.setText(intensityholder);
+        textViewi.setText(intensityholder);
 
         lv = (ListView)findViewById(R.id.listview1);
         db = openOrCreateDatabase("workouts",MODE_PRIVATE,null);
@@ -48,6 +54,8 @@ public class Cardio extends AppCompatActivity {
                 Car.add(c.getString(0));
             }
         }
+
+
         ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1,Car);
         lv.setAdapter(ad);
 
@@ -60,16 +68,29 @@ public class Cardio extends AppCompatActivity {
                 String CarListView = Car.get(position).toString();
                 intent.putExtra("cardioclickvalue", CarListView);
 
+                //String cardioWorkout = (CarListView) parent.getItemAtPosition(position);
+
                 startActivity(intent);
 
             }
         };
         lv.setOnItemClickListener(itemClickListener);
+    }
 
-
-
+    /*String text = textView.getText().toString();
+    public String getIntensity(){
+        if (text == "Beginner"){
+            return String.valueOf(Iar.get(0));
+        }
+        else if (text == "Intermediate"){
+            return String.valueOf(Iar.get(1));
+        }
+        else {
+            return String.valueOf(Iar.get(2));
+        }
 
     }
+    */
 }
 
 
