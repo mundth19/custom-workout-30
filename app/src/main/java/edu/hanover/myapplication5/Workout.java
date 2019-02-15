@@ -22,20 +22,20 @@ import android.widget.SimpleCursorAdapter;
 
 
 
-public class Workout extends MuscleGroup {
+public class Workout extends AppCompatActivity {
 
     //String cardioholder = getIntent().getStringExtra("cardioclickvalue");
     //String intensityholder = getIntent().getStringExtra("intensityclickvalue");
     //String muscleholder = getIntent().getStringExtra("muscleclickvalue");
 
-    TextView textView;
-    TextView textView1;
-    private SQLiteDatabase db;
-    private Cursor cursor;
-
-    Cardio cardioclass = new Cardio();
-    Intensity intensityclass = new Intensity();
-    MuscleGroup musclegroupclass = new MuscleGroup();
+//    TextView textView;
+//    TextView textView1;
+//    private SQLiteDatabase db;
+//    private Cursor cursor;
+//
+//    Cardio cardioclass = new Cardio();
+//    Intensity intensityclass = new Intensity();
+//    MuscleGroup musclegroupclass = new MuscleGroup();
 
 
 
@@ -43,17 +43,18 @@ public class Workout extends MuscleGroup {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout);
-        ListView listworkout = (ListView)findViewById(R.id.listviewwkout);
 
-        textView = (TextView) findViewById(R.id.txtitem);
-        String muscleholder = getIntent().getStringExtra("muscleclickvalue");
-        textView.setText(muscleholder);
+        TextView textViewc = (TextView) findViewById(R.id.txtitemc);
+        String cardioholder = getIntent().getStringExtra("cardiotext");
+        textViewc.setText(cardioholder);
 
-        //textView1 = (TextView) findViewById(R.id.txtitem1);
-        //textView1.setText((CharSequence) textViewi);
+        TextView textViewi = (TextView) findViewById(R.id.txtitemi);
+        String intensityholder = getIntent().getStringExtra("intensitytext");
+        textViewi.setText(intensityholder);
 
-        //textView = (TextView) findViewById(R.id.txtitem);
-        //textView.setText(intensityclass.getIntensity());
+        TextView textViewm = (TextView) findViewById(R.id.txtitemm);
+        String muscleholder = getIntent().getStringExtra("muscletext");
+        textViewm.setText(muscleholder);
 
 
       /*  String CarListView = Car.get(position).toString();
