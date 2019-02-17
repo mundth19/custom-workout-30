@@ -33,17 +33,14 @@ public class Workout extends AppCompatActivity {
 
         TextView textViewc = (TextView) findViewById(R.id.txtitemc);
         String cardioholder = getIntent().getStringExtra("cardiotext");
-        //textViewc.setText(cardioholder);
 
         TextView textViewi = (TextView) findViewById(R.id.txtitemi);
         String intensityholder = getIntent().getStringExtra("intensitytext");
-        //textViewi.setText(intensityholder);
 
         TextView textViewm = (TextView) findViewById(R.id.txtitemm);
         String muscleholder = getIntent().getStringExtra("muscletext");
-        //textViewm.setText(muscleholder);
 
-          ListView lv = (ListView)findViewById(R.id.lvcardio);
+          //ListView lv = (ListView)findViewById(R.id.lvcardio);
         //TextView tcar = (TextView) findViewById(R.id.txtitemc);
 //        SQLiteDatabase db = openOrCreateDatabase("workouts",MODE_PRIVATE,null);
 //        Cursor c = db.rawQuery("select name from cardio", null);
@@ -63,25 +60,55 @@ public class Workout extends AppCompatActivity {
 
        //getCardio method
         SQLiteDatabase db = openOrCreateDatabase("workouts",MODE_PRIVATE,null);
-        Cursor c = db.query("CARDIO", new String[] {"NAME", "INTENSITY", "DESCRIPTION"},
+        Cursor cc = db.query("CARDIO", new String[] {"NAME", "INTENSITY", "DESCRIPTION"},
                 "NAME = ? AND INTENSITY = ?", new String [] {cardioholder, intensityholder},
                 null,null,null);
-        //ArrayList car = new ArrayList();
-        if (c.moveToFirst()){
-            String nameText = c.getString(0);
-            String intensityText = c.getString(1);
-            String descriptionText = c.getString(2);
-            textViewc.setText(nameText);
-            textViewi.setText(intensityText);
-            textViewm.setText(descriptionText);
+        if (cc.moveToFirst()){
+            String cnameText = cc.getString(0);
+            String cintensityText = cc.getString(1);
+            String cdescriptionText = cc.getString(2);
+            //textViewc.setText(nameText);
+            //textViewi.setText(intensityText);
+            textViewm.setText(cdescriptionText);
 
         }
-        c.close();
+        cc.close();
+        //db.close();
+
+        Cursor lc = db.query("LIFTING", new String[] {"NAME", "INTENSITY", "DESCRIPTION"},
+                "NAME = ? AND INTENSITY = ?", new String[]{muscleholder, intensityholder},
+                null,null,null);
+        if (lc.moveToFirst()) {
+            String lnameText = lc.getString(0);
+            String lintensityText = lc.getString(1);
+            String ldescriptionText = lc.getString(2);
+            //textViewc.setText(nameText);
+            //textViewi.setText(intensityText);
+            textViewc.setText(ldescriptionText +"\n"+"\n");
+        }
+        while (lc.moveToNext()){
+            String ldescriptionText = lc.getString(2);
+            textViewc.append(ldescriptionText+"\n"+"\n");
+        }
+        lc.close();
+
+        Cursor yc = db.query("YOGA", new String[] {"NAME", "DESCRIPTION"},
+                "NAME = ?", new String[]{muscleholder}, null, null,null);
+        if (yc.moveToFirst()) {
+            String lnameText = yc.getString(0);
+            String ydescriptionText = yc.getString(1);
+            //textViewc.setText(nameText);
+            //textViewi.setText(intensityText);
+            textViewi.setText(ydescriptionText +"\n"+"\n");
+        }
+        while (yc.moveToNext()){
+            String ydescriptionText = yc.getString(1);
+            textViewi.append(ydescriptionText+"\n"+"\n");
+        }
+        yc.close();
+
+
         db.close();
-        //car.add(cardioholder);
-        //ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1,car);
-        //tcar.setText((CharSequence) ad);
-        //lv.setAdapter(ad);
 
 
 
@@ -136,7 +163,7 @@ public class Workout extends AppCompatActivity {
     }
   */
     }
-  
+
 }
 
 
