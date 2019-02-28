@@ -73,13 +73,7 @@ public class ExerciseSelect extends AppCompatActivity {
         adapter2.remove("Mid Body");adapter2.remove("Mid Body");adapter2.remove("Mid Body");adapter2.remove("Mid Body");adapter2.remove("Mid Body");adapter2.remove("Mid Body");adapter2.remove("Mid Body");adapter2.remove("Mid Body");
         adapter2.remove("Lower Body");adapter2.remove("Lower Body");adapter2.remove("Lower Body");adapter2.remove("Lower Body");adapter2.remove("Lower Body");adapter2.remove("Lower Body");adapter2.remove("Lower Body");adapter2.remove("Lower Body");
 
-//        cardio.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-//                Object item = parent.getItemAtPosition(position);
-//            }
-//            public void onNothingSelected(AdapterView<?> parent) {
-//            }
-//        });
+
         cardio.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(
                     AdapterView<?> adapterView, View view,
@@ -141,6 +135,8 @@ public class ExerciseSelect extends AppCompatActivity {
 
 
     }
+
+    //remove functions
 
 
 
