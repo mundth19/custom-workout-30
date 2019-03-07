@@ -11,7 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import java.util.ArrayList;
 
 public class ExerciseSelect extends AppCompatActivity {
 
@@ -129,6 +128,7 @@ public class ExerciseSelect extends AppCompatActivity {
                 intent.putExtra("cardiotext", textViewCardio.getText().toString());
                 intent.putExtra("intensitytext", textViewIntensity.getText().toString());
                 intent.putExtra("muscletext", textViewMuscle.getText().toString());
+
                 startActivity(intent);
             }
         });
