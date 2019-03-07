@@ -20,13 +20,10 @@ public class Workout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_workout);
 
-        //TextView textViewc = (TextView) findViewById(R.id.txtitemc);
         String cardioholder = getIntent().getStringExtra("cardiotext");
 
-        //TextView textViewi = (TextView) findViewById(R.id.txtitemi);
         String intensityholder = getIntent().getStringExtra("intensitytext");
 
-        //TextView textViewm = (TextView) findViewById(R.id.txtitemm);
         String muscleholder = getIntent().getStringExtra("muscletext");
 
         CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
@@ -45,8 +42,8 @@ public class Workout extends AppCompatActivity {
             checkBox.setText(cdescriptionText);
 
         }
-        cc.close();
 
+        cc.close();
 
 
         Cursor lc = db.query("LIFTING", new String[] {"NAME", "INTENSITY", "DESCRIPTION"},

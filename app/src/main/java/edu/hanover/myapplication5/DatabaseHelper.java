@@ -109,16 +109,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert("YOGA", null, yogaValues);
     }
 
-    //method to view data
-    /*public Cursor viewData() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        String query = "Select name, intensity FROM cardio WHERE name = ? AND roll = ?";
-        String[] selectionArgs = {"Running", "Beginner"};
-        Cursor cursor = db.rawQuery(query, selectionArgs);
-
-        return cursor;
-        }
-*/
-
 }
 
