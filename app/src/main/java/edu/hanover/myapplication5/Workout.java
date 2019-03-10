@@ -1,17 +1,12 @@
 package edu.hanover.myapplication5;
 
-import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.view.inputmethod.InputMethodManager;
-import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.view.View;
 
 public class Workout extends AppCompatActivity {
 
@@ -42,7 +37,6 @@ public class Workout extends AppCompatActivity {
             checkBox.setText(cdescriptionText);
 
         }
-
         cc.close();
 
 
@@ -73,11 +67,19 @@ public class Workout extends AppCompatActivity {
             checkBox3.append(ydescriptionText+"\n"+"\n");
         }
         yc.close();
-
-
         db.close();
     }
 
+    public void onClickSave(View view) {
+        Intent intent = new Intent(this, History.class);
+        CheckBox checkboxC = (CheckBox) findViewById(R.id.checkBox);
+        CheckBox checkboxL = (CheckBox) findViewById(R.id.checkBox2);
+        CheckBox checkboxY = (CheckBox) findViewById(R.id.checkBox3);
+        intent.putExtra("cardioExercise", checkboxC.getText().toString());
+        intent.putExtra("liftExercise", checkboxL.getText().toString());
+        intent.putExtra("yogaExercise", checkboxY.getText().toString());
+        startActivity(intent);
+    }
 }
 
 

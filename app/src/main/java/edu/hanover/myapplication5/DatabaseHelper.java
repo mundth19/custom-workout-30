@@ -80,7 +80,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insertYoga(db, "Lower Body", "Flamingo stretch; hold for 10 seconds; 3 sets/leg", 5);
         insertYoga(db, "Lower Body", "Wall stretch; hold for 10 seconds; 3 sets/leg", 6);
 
-    }
+   }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { {   } }
 
@@ -107,6 +107,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         yogaValues.put("NAME", name);
         yogaValues.put("DESCRIPTION", description);
         db.insert("YOGA", null, yogaValues);
+    }
+
+    public static void insertHistory(SQLiteDatabase db, String cardio, String lift, String yoga) {
+        ContentValues historyValues = new ContentValues();
+        historyValues.put("CARDIO", cardio);
+        historyValues.put("LIFT", lift);
+        historyValues.put("YOGA", yoga);
+        db.insert("HISTORY", null, historyValues);
     }
 
 }
