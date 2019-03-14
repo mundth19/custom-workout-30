@@ -3,11 +3,14 @@ package edu.hanover.myapplication5;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.method.LinkMovementMethod;
 import android.widget.CheckBox;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -47,6 +50,12 @@ public class Workout extends AppCompatActivity {
         }
         cc.close();
 
+        TextView liftvids = (TextView) findViewById(R.id.textView3);
+        liftvids.setClickable(true);
+        liftvids.setMovementMethod(LinkMovementMethod.getInstance());
+        String text = "https://www.youtube.com/playlist?list=PLyP03Zd31OhMJWdIkpZBhq5MsUix3qHJU";
+        liftvids.setText("Lifting Tutorials  ");
+        liftvids.append(Html.fromHtml(text));
 
         Cursor lc = db.query("LIFTING", new String[] {"NAME", "INTENSITY", "DESCRIPTION"},
                 "NAME = ? AND INTENSITY = ?", new String[]{muscleholder, intensityholder},
@@ -62,6 +71,13 @@ public class Workout extends AppCompatActivity {
             checkBox2.append(ldescriptionText+"\n"+"\n");
         }
         lc.close();
+
+        TextView stretchvids = (TextView) findViewById(R.id.textView6);
+        stretchvids.setClickable(true);
+        stretchvids.setMovementMethod(LinkMovementMethod.getInstance());
+        String link = "https://www.youtube.com/playlist?list=PLyP03Zd31OhMJWdIkpZBhq5MsUix3qHJU";
+        stretchvids.setText("Stretching Tutorials  ");
+        stretchvids.append(Html.fromHtml(link));
 
         Cursor yc = db.query("YOGA", new String[] {"NAME", "DESCRIPTION"},
                 "NAME = ?", new String[]{muscleholder}, null, null,null);

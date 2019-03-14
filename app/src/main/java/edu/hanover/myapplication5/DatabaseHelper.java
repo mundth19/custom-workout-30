@@ -57,6 +57,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insertLifting(db, "Upper Body", "Beginner", "4 push-ups; 3 sets", 7);
         insertLifting(db, "Upper Body", "Intermediate", "5 push-ups; 4 sets", 8);
         insertLifting(db, "Upper Body", "Advanced", "8 push-ups; 3 sets", 9);
+        //pull ups, dumb bell press
+
         //mid body - crunches, russian twists, plank
         insertLifting(db, "Mid Body", "Beginner", "15 crunches; 3 sets", 10);
         insertLifting(db, "Mid Body", "Intermediate", "25 crunches; 3 sets", 11);
@@ -67,7 +69,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insertLifting(db, "Mid Body", "Beginner", "plank for 20 seconds; 3 sets", 16);
         insertLifting(db, "Mid Body", "Intermediate", "plank for 45 seconds; 3 sets", 17);
         insertLifting(db, "Mid Body", "Advanced", "plank for 1 minute; 3 sets", 18);
-        //lower body - squats, lunges, calf raises
+        //side plank, mountain climbers
+
+        //lower body
         insertLifting(db, "Lower Body", "Beginner", "5 squats with dumbbells; 3 sets", 19);
         insertLifting(db, "Lower Body", "Intermediate", "8 squats with dumbbells; 3 sets", 20);
         insertLifting(db, "Lower Body", "Advanced", "12 squats with dumbbells; 3 sets", 21);
@@ -77,6 +81,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insertLifting(db, "Lower Body", "Beginner", "10 weighted calf raises; 3 sets", 25);
         insertLifting(db, "Lower Body", "Intermediate", "15 weighted calf raises; 3 sets", 26);
         insertLifting(db, "Lower Body", "Advanced", "20 weighted calf raises; 3 sets", 27);
+        //single leg deadlifts, glute kickbacks
 
         db.execSQL("CREATE TABLE YOGA ("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
@@ -86,10 +91,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         //insert yoga exercises here
         insertYoga(db, "Upper Body","Overhead triceps and shoulder stretch; hold for 10 seconds; 3 sets/arm", 1);
         insertYoga(db, "Upper Body",  "Cross-body shoulder stretch; hold for 10 seconds; 3 sets/arm", 2);
-        insertYoga(db, "Mid Body", "Stand and stretch (include link); hold for 30 seconds; 3 sets",  3);
-        insertYoga(db, "Mid Body", "Lie and stretch (include link); hold for 30 seconds; 3 sets ", 4);
+        insertYoga(db, "Mid Body", "Cat Cow pose; hold for 30 seconds; 3 sets",  3);
+        insertYoga(db, "Mid Body", "Cobra stretch; hold for 30 seconds; 3 sets ", 4);
         insertYoga(db, "Lower Body", "Flamingo stretch; hold for 10 seconds; 3 sets/leg", 5);
-        insertYoga(db, "Lower Body", "Wall stretch; hold for 10 seconds; 3 sets/leg", 6);
+        insertYoga(db, "Lower Body", "Standing wall stretch; hold for 10 seconds; 3 sets/leg", 6);
+
 
 //        db.execSQL("CREATE TABLE SAVED ("
 //                + "DATE TEXT, "
