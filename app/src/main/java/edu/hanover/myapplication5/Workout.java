@@ -7,6 +7,12 @@ import android.widget.CheckBox;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
+import android.widget.EditText;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import static edu.hanover.myapplication5.DatabaseHelper.insertHistory;
 
 public class Workout extends AppCompatActivity {
 
@@ -20,6 +26,7 @@ public class Workout extends AppCompatActivity {
         String intensityholder = getIntent().getStringExtra("intensitytext");
 
         String muscleholder = getIntent().getStringExtra("muscletext");
+        String formattedDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
 
         CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
         CheckBox checkBox2 = (CheckBox) findViewById(R.id.checkBox2);
@@ -34,7 +41,8 @@ public class Workout extends AppCompatActivity {
             String cnameText = cc.getString(0);
             String cintensityText = cc.getString(1);
             String cdescriptionText = cc.getString(2);
-            checkBox.setText(cdescriptionText);
+            checkBox.setText(formattedDate);
+            checkBox.append(cdescriptionText);
 
         }
         cc.close();
@@ -72,12 +80,18 @@ public class Workout extends AppCompatActivity {
 
     public void onClickSave(View view) {
         Intent intent = new Intent(this, History.class);
+        String formattedDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
+        SQLiteDatabase db = openOrCreateDatabase("saved", MODE_PRIVATE, null);
         CheckBox checkboxC = (CheckBox) findViewById(R.id.checkBox);
         CheckBox checkboxL = (CheckBox) findViewById(R.id.checkBox2);
         CheckBox checkboxY = (CheckBox) findViewById(R.id.checkBox3);
-        intent.putExtra("cardioExercise", checkboxC.getText().toString());
-        intent.putExtra("liftExercise", checkboxL.getText().toString());
-        intent.putExtra("yogaExercise", checkboxY.getText().toString());
+        EditText editT = (EditText) findViewById(R.id.editText2);
+//        intent.putExtra("cardioExercise", checkboxC.getText().toString());
+//        intent.putExtra("liftExercise", checkboxL.getText().toString());
+//        intent.putExtra("yogaExercise", checkboxY.getText().toString());
+//        intent.putExtra("notes", editT.getText().toString());
+        insertHistory(db, formattedDate, checkboxC.getText().toString(), checkboxL.getText().toString(), checkboxY.getText().toString(),
+                editT.getText().toString());
         startActivity(intent);
     }
 }

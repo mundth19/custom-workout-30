@@ -2,20 +2,31 @@ package edu.hanover.myapplication5;
 
 import android.app.Activity;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.os.Bundle;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.ContentValues;
+import android.provider.ContactsContract;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+    String formattedDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
     private static final String DB_NAME = "workouts"; // the name of our database
     private static final int DB_VERSION = 1; //version of database
     DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
+        db = this.getWritableDatabase();
+
+
         db.execSQL("CREATE TABLE CARDIO ("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + " NAME TEXT, "
@@ -80,9 +91,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insertYoga(db, "Lower Body", "Flamingo stretch; hold for 10 seconds; 3 sets/leg", 5);
         insertYoga(db, "Lower Body", "Wall stretch; hold for 10 seconds; 3 sets/leg", 6);
 
+//        db.execSQL("CREATE TABLE SAVED ("
+//                + "DATE TEXT, "
+//                + " CARDIO TEXT, "
+//                + "LIFT TEXT, "
+//                + "YOGA TEXT, "
+//                + "NOTES TEXT);");
+
+
    }
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { {   } }
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { {
+
+    } }
 
     private static void insertCardio (SQLiteDatabase db, String name, String intensity, String description, int resourceId ){
         ContentValues cardioValues = new ContentValues();
@@ -109,12 +130,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert("YOGA", null, yogaValues);
     }
 
-    public static void insertHistory(SQLiteDatabase db, String cardio, String lift, String yoga) {
+    public static void insertHistory(SQLiteDatabase db, String date, String cardio, String lift, String yoga, String notes) {
         ContentValues historyValues = new ContentValues();
+        historyValues.put("DATE", date);
         historyValues.put("CARDIO", cardio);
         historyValues.put("LIFT", lift);
         historyValues.put("YOGA", yoga);
-        db.insert("HISTORY", null, historyValues);
+        historyValues.put("NOTES", notes);
+        db.insert("SAVED", null, historyValues);
     }
 
 }

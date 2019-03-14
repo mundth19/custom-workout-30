@@ -17,9 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".History" />
-        <activity android:name=".Workout"
-            android:windowSoftInputMode="stateHidden"/>
-        <activity android:name=".ExerciseSelect"></activity>
+        <activity
+            android:name=".Workout"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".ExerciseSelect" />
+        <activity android:name=".HistoryDescription"></activity>
     </application>
 
 </manifest>
