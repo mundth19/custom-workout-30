@@ -41,11 +41,11 @@ public class History extends AppCompatActivity {
 
         //below works
         ListView saved = (ListView) findViewById(R.id.SavedHistory);
-//        String cardioExercise = getIntent().getStringExtra("cardioExercise");
-//        String liftExercise = getIntent().getStringExtra("liftExercise");
-//        String yogaExercise = getIntent().getStringExtra("yogaExercise");
-//        String notes = getIntent().getStringExtra("notes");
-//        String formattedDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
+        String cardioExercise = getIntent().getStringExtra("cardioExercise");
+        String liftExercise = getIntent().getStringExtra("liftExercise");
+        String yogaExercise = getIntent().getStringExtra("yogaExercise");
+        String notes = getIntent().getStringExtra("notes");
+        String formattedDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
 
         SQLiteDatabase db = openOrCreateDatabase("saved", MODE_PRIVATE, null);
 
@@ -61,14 +61,22 @@ public class History extends AppCompatActivity {
         Cursor h = db.query("SAVED", new String[] {"DATE", "CARDIO", "LIFT", "YOGA"}, null, null, null, null, null);
 
         ArrayList ar = new ArrayList();
+//        if(h.isNull(1)){
+//            insertHistory(db, formattedDate, cardioExercise, liftExercise, yogaExercise, notes);
+//        }
+        while (h.isNull(1)){
+                insertHistory(db, formattedDate, cardioExercise, liftExercise, yogaExercise, notes);
+        }
         while (h.moveToNext() && h.isNull(1)==false) {
 
             ar.add(h.getString(0));
             ar.add(h.getString(1));
             ar.add(h.getString(2));
             ar.add(h.getString(3));
-
         }
+//        if(h.isNull(1)){
+//            insertHistory(db, formattedDate, cardioExercise, liftExercise, yogaExercise, notes);
+//        }
 
 
             ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ar);

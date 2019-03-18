@@ -56,32 +56,49 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insertLifting(db, "Upper Body", "Advanced", "8 tricep dips; 3 sets", 6);
         insertLifting(db, "Upper Body", "Beginner", "4 push-ups; 3 sets", 7);
         insertLifting(db, "Upper Body", "Intermediate", "5 push-ups; 4 sets", 8);
-        insertLifting(db, "Upper Body", "Advanced", "8 push-ups; 3 sets", 9);
-        //pull ups, dumb bell press
+        insertLifting(db, "Upper Body", "Advanced", "7 push-ups; 4 sets", 9);
 
-        //mid body - crunches, russian twists, plank
-        insertLifting(db, "Mid Body", "Beginner", "15 crunches; 3 sets", 10);
-        insertLifting(db, "Mid Body", "Intermediate", "25 crunches; 3 sets", 11);
-        insertLifting(db, "Mid Body", "Advanced", "35 crunches; 3 sets", 12);
-        insertLifting(db, "Mid Body", "Beginner", "15 russian twists; 3 sets", 13);
-        insertLifting(db, "Mid Body", "Intermediate", "25 russian twists; 3 sets", 14);
-        insertLifting(db, "Mid Body", "Advanced", "35 russian twists; 3 sets", 15);
-        insertLifting(db, "Mid Body", "Beginner", "plank for 20 seconds; 3 sets", 16);
-        insertLifting(db, "Mid Body", "Intermediate", "plank for 45 seconds; 3 sets", 17);
-        insertLifting(db, "Mid Body", "Advanced", "plank for 1 minute; 3 sets", 18);
-        //side plank, mountain climbers
+        insertLifting(db, "Upper Body", "Beginner", "3 pull-ups; 3 sets", 10);
+        insertLifting(db, "Upper Body", "Intermediate", "4 pull-ups; 4 sets", 11);
+        insertLifting(db, "Upper Body", "Advanced", "6 pull-ups; 3 sets", 12);
+        insertLifting(db, "Upper Body", "Beginner", "4 dumbbell presses; 3 sets/arm", 13);
+        insertLifting(db, "Upper Body", "Intermediate", "4 dumbbell presses; 4 sets/arm", 14);
+        insertLifting(db, "Upper Body", "Advanced", "6 dumbbell presses; 3 sets/arm", 15);
+
+        //mid body
+        insertLifting(db, "Mid Body", "Beginner", "15 crunches; 3 sets", 16);
+        insertLifting(db, "Mid Body", "Intermediate", "25 crunches; 3 sets", 17);
+        insertLifting(db, "Mid Body", "Advanced", "35 crunches; 3 sets", 18);
+        insertLifting(db, "Mid Body", "Beginner", "15 russian twists; 3 sets", 19);
+        insertLifting(db, "Mid Body", "Intermediate", "25 russian twists; 3 sets", 20);
+        insertLifting(db, "Mid Body", "Advanced", "35 russian twists; 3 sets", 21);
+        insertLifting(db, "Mid Body", "Beginner", "plank for 20 seconds; 3 sets", 22);
+        insertLifting(db, "Mid Body", "Intermediate", "plank for 45 seconds; 3 sets", 23);
+        insertLifting(db, "Mid Body", "Advanced", "plank for 1 minute; 3 sets", 24);
+
+        insertLifting(db, "Mid Body", "Beginner", "20 sec side plank; 3 sets/side", 25);
+        insertLifting(db, "Mid Body", "Intermediate", "40 sec side plank; 3 sets/side", 26);
+        insertLifting(db, "Mid Body", "Advanced", "60 sec side plank; 3 sets/side", 27);
+        insertLifting(db, "Mid Body", "Beginner", "20 mountain climbers; 3 sets", 28);
+        insertLifting(db, "Mid Body", "Intermediate", "35 mountain climbers; 3 sets", 29);
+        insertLifting(db, "Mid Body", "Advanced", "50 mountain climbers; 3 sets", 30);
 
         //lower body
-        insertLifting(db, "Lower Body", "Beginner", "5 squats with dumbbells; 3 sets", 19);
-        insertLifting(db, "Lower Body", "Intermediate", "8 squats with dumbbells; 3 sets", 20);
-        insertLifting(db, "Lower Body", "Advanced", "12 squats with dumbbells; 3 sets", 21);
-        insertLifting(db, "Lower Body", "Beginner", "4 lunges per leg with dumbbells; 3 sets", 22);
-        insertLifting(db, "Lower Body", "Intermediate", "8 lunges per leg with dumbbells; 3 sets", 23);
-        insertLifting(db, "Lower Body", "Advanced", "10 lunges per leg with dumbbells; 3 sets", 24);
-        insertLifting(db, "Lower Body", "Beginner", "10 weighted calf raises; 3 sets", 25);
-        insertLifting(db, "Lower Body", "Intermediate", "15 weighted calf raises; 3 sets", 26);
-        insertLifting(db, "Lower Body", "Advanced", "20 weighted calf raises; 3 sets", 27);
-        //single leg deadlifts, glute kickbacks
+        insertLifting(db, "Lower Body", "Beginner", "5 squats with dumbbells; 3 sets", 31);
+        insertLifting(db, "Lower Body", "Intermediate", "8 squats with dumbbells; 3 sets", 32);
+        insertLifting(db, "Lower Body", "Advanced", "12 squats with dumbbells; 3 sets", 33);
+        insertLifting(db, "Lower Body", "Beginner", "4 lunges per leg with dumbbells; 3 sets", 34);
+        insertLifting(db, "Lower Body", "Intermediate", "8 lunges per leg with dumbbells; 3 sets", 35);
+        insertLifting(db, "Lower Body", "Advanced", "10 lunges per leg with dumbbells; 3 sets", 36);
+        insertLifting(db, "Lower Body", "Beginner", "10 weighted calf raises; 3 sets", 37);
+        insertLifting(db, "Lower Body", "Intermediate", "15 weighted calf raises; 3 sets", 38);
+        insertLifting(db, "Lower Body", "Advanced", "20 weighted calf raises; 3 sets", 39);
+        insertLifting(db, "Lower Body", "Beginner", "5 single leg deadlifts; 3 sets/leg", 40);
+        insertLifting(db, "Lower Body", "Intermediate", "8 single leg deadlifts; 3 sets/leg", 41);
+        insertLifting(db, "Lower Body", "Advanced", "8 single leg deadlifts; 4 sets/leg", 42);
+        insertLifting(db, "Lower Body", "Beginner", "5 glute kickbacks; 3 sets/leg", 43);
+        insertLifting(db, "Lower Body", "Intermediate", "8 glute kickbacks; 3 sets/leg", 44);
+        insertLifting(db, "Lower Body", "Advanced", "8 glute kickbacks; 4 sets/leg", 45);
 
         db.execSQL("CREATE TABLE YOGA ("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
