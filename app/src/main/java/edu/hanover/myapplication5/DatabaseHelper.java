@@ -57,7 +57,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insertLifting(db, "Upper Body", "Beginner", "4 push-ups; 3 sets", 7);
         insertLifting(db, "Upper Body", "Intermediate", "5 push-ups; 4 sets", 8);
         insertLifting(db, "Upper Body", "Advanced", "7 push-ups; 4 sets", 9);
-
         insertLifting(db, "Upper Body", "Beginner", "3 pull-ups; 3 sets", 10);
         insertLifting(db, "Upper Body", "Intermediate", "4 pull-ups; 4 sets", 11);
         insertLifting(db, "Upper Body", "Advanced", "6 pull-ups; 3 sets", 12);
@@ -75,7 +74,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insertLifting(db, "Mid Body", "Beginner", "plank for 20 seconds; 3 sets", 22);
         insertLifting(db, "Mid Body", "Intermediate", "plank for 45 seconds; 3 sets", 23);
         insertLifting(db, "Mid Body", "Advanced", "plank for 1 minute; 3 sets", 24);
-
         insertLifting(db, "Mid Body", "Beginner", "20 sec side plank; 3 sets/side", 25);
         insertLifting(db, "Mid Body", "Intermediate", "40 sec side plank; 3 sets/side", 26);
         insertLifting(db, "Mid Body", "Advanced", "60 sec side plank; 3 sets/side", 27);
@@ -122,7 +120,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //                + "NOTES TEXT);");
 
 
-   }
+    }
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { {
 

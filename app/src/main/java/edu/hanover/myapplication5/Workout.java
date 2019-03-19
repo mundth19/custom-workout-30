@@ -13,7 +13,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
 
 import static edu.hanover.myapplication5.DatabaseHelper.insertHistory;
 
@@ -25,9 +29,7 @@ public class Workout extends AppCompatActivity {
         setContentView(R.layout.activity_workout);
 
         String cardioholder = getIntent().getStringExtra("cardiotext");
-
         String intensityholder = getIntent().getStringExtra("intensitytext");
-
         String muscleholder = getIntent().getStringExtra("muscletext");
         String formattedDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
 
@@ -44,7 +46,7 @@ public class Workout extends AppCompatActivity {
             String cnameText = cc.getString(0);
             String cintensityText = cc.getString(1);
             String cdescriptionText = cc.getString(2);
-            checkBox.setText(formattedDate);
+            checkBox.setText(formattedDate + "\n");
             checkBox.append(cdescriptionText);
 
         }
@@ -60,16 +62,26 @@ public class Workout extends AppCompatActivity {
         Cursor lc = db.query("LIFTING", new String[] {"NAME", "INTENSITY", "DESCRIPTION"},
                 "NAME = ? AND INTENSITY = ?", new String[]{muscleholder, intensityholder},
                 null,null,null);
+        List<String> lifts = new ArrayList<String>();
         if (lc.moveToFirst()) {
             String lnameText = lc.getString(0);
             String lintensityText = lc.getString(1);
             String ldescriptionText = lc.getString(2);
-            checkBox2.setText(ldescriptionText +"\n"+"\n");
+            lifts.add(ldescriptionText);
+            //checkBox2.setText(ldescriptionText +"\n"+"\n");
         }
         while (lc.moveToNext()){
             String ldescriptionText = lc.getString(2);
-            checkBox2.append(ldescriptionText+"\n"+"\n");
+            lifts.add(ldescriptionText);
+            Collections.shuffle(lifts);
+            //checkBox2.append(ldescriptionText+"\n"+"\n");
         }
+//        Collections.shuffle(lifts);
+        checkBox2.setText(lifts.get(0) + "\n"+ "\n");
+        checkBox2.append(lifts.get(1));
+        checkBox2.append(lifts.get(2));
+        //checkBox2.append(lifts.get(3)); doesn't work bc things list length is only 3
+
         lc.close();
 
         TextView stretchvids = (TextView) findViewById(R.id.textView6);
