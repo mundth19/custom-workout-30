@@ -114,10 +114,6 @@ public class Workout extends AppCompatActivity {
         CheckBox checkboxL = (CheckBox) findViewById(R.id.checkBox2);
         CheckBox checkboxY = (CheckBox) findViewById(R.id.checkBox3);
         EditText editT = (EditText) findViewById(R.id.editText2);
-//        intent.putExtra("cardioExercise", checkboxC.getText().toString());
-//        intent.putExtra("liftExercise", checkboxL.getText().toString());
-//        intent.putExtra("yogaExercise", checkboxY.getText().toString());
-//        intent.putExtra("notes", editT.getText().toString());
         insertHistory(db, formattedDate, checkboxC.getText().toString(), checkboxL.getText().toString(), checkboxY.getText().toString(),
                 editT.getText().toString());
         startActivity(intent);
