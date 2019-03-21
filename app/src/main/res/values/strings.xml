@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyApplication5</string>
+    <string name="app_name">Custom-Workout-30</string>
     <string name="liftingvideos">https://www.youtube.com/playlist?list=PLyP03Zd31OhMJWdIkpZBhq5MsUix3qHJU</string>
     <string name="stretchingvideos">https://www.youtube.com/playlist?list=PLyP03Zd31OhM0L18jWWPmmiYKm_Cl0Rky</string>
     <string-array name="options">
