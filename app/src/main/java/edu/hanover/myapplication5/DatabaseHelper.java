@@ -1,37 +1,31 @@
 package edu.hanover.myapplication5;
 
-import android.app.Activity;
-import android.database.Cursor;
-import android.database.DatabaseUtils;
-import android.os.Bundle;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.ContentValues;
-import android.provider.ContactsContract;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     String formattedDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
-    private static final String DB_NAME = "workouts"; // the name of our database
+    private static final String DB_NAME = "workouts"; // the name of database
     private static final int DB_VERSION = 1; //version of database
     DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         db = this.getWritableDatabase();
 
-
+        //creating CARDIO table
         db.execSQL("CREATE TABLE CARDIO ("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + " NAME TEXT, "
                 + "INTENSITY TEXT, "
                 + "DESCRIPTION TEXT);");
+        //cardio exercises inserted into cardio table below
         insertCardio(db, "Running", "Beginner", "Run at a 15 minute mile pace for 10 minutes", 1);
         insertCardio(db, "Running", "Intermediate", "Run at a 11 minute mile pace for 10 minutes", 2);
         insertCardio(db, "Running", "Advanced", "Run at a 7.5 minute mile pace for 10 minutes", 3);
@@ -42,12 +36,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insertCardio(db, "Elliptical", "Intermediate", "Exercise on an elliptical at speed 7 for 10 minutes", 8);
         insertCardio(db, "Elliptical", "Advanced", "Exercise on an elliptical at speed 9 for 10 minutes", 9);
 
+        //creating LIFTING table
         db.execSQL("CREATE TABLE LIFTING ("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + " NAME TEXT, "
                 + "INTENSITY TEXT, "
                 + "DESCRIPTION TEXT);");
-        //upper body
+        //upper body exercises inserted into LIFTING table
         insertLifting(db, "Upper Body", "Beginner", "8 bicep curls per arm; 3 sets", 1);
         insertLifting(db, "Upper Body", "Intermediate", "8 bicep curls per arm; 4 sets", 2);
         insertLifting(db, "Upper Body", "Advanced", "10 bicep curls per arm; 3 sets", 3);
@@ -64,7 +59,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insertLifting(db, "Upper Body", "Intermediate", "4 dumbbell presses; 4 sets/arm", 14);
         insertLifting(db, "Upper Body", "Advanced", "6 dumbbell presses; 3 sets/arm", 15);
 
-        //mid body
+        //mid body exercises inserted into LIFTING table
         insertLifting(db, "Mid Body", "Beginner", "15 crunches; 3 sets", 16);
         insertLifting(db, "Mid Body", "Intermediate", "25 crunches; 3 sets", 17);
         insertLifting(db, "Mid Body", "Advanced", "35 crunches; 3 sets", 18);
@@ -81,7 +76,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insertLifting(db, "Mid Body", "Intermediate", "35 mountain climbers; 3 sets", 29);
         insertLifting(db, "Mid Body", "Advanced", "50 mountain climbers; 3 sets", 30);
 
-        //lower body
+        //lower body exercises inserted into LIFTING table
         insertLifting(db, "Lower Body", "Beginner", "5 squats with dumbbells; 3 sets", 31);
         insertLifting(db, "Lower Body", "Intermediate", "8 squats with dumbbells; 3 sets", 32);
         insertLifting(db, "Lower Body", "Advanced", "12 squats with dumbbells; 3 sets", 33);
@@ -98,19 +93,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insertLifting(db, "Lower Body", "Intermediate", "8 glute kickbacks; 3 sets/leg", 44);
         insertLifting(db, "Lower Body", "Advanced", "8 glute kickbacks; 4 sets/leg", 45);
 
+        //creating YOGA table
         db.execSQL("CREATE TABLE YOGA ("
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + " NAME TEXT, "
                 + "INTENSITY TEXT, "
                 + "DESCRIPTION TEXT);");
-        //insert yoga exercises here
+        //yoga exercises inserted into YOGA table
         insertYoga(db, "Upper Body","Overhead triceps and shoulder stretch; hold for 10 seconds; 3 sets/arm", 1);
         insertYoga(db, "Upper Body",  "Cross-body shoulder stretch; hold for 10 seconds; 3 sets/arm", 2);
         insertYoga(db, "Mid Body", "Cat Cow pose; hold for 30 seconds; 3 sets",  3);
         insertYoga(db, "Mid Body", "Cobra stretch; hold for 30 seconds; 3 sets ", 4);
         insertYoga(db, "Lower Body", "Flamingo stretch; hold for 10 seconds; 3 sets/leg", 5);
         insertYoga(db, "Lower Body", "Standing wall stretch; hold for 10 seconds; 3 sets/leg", 6);
-
 
 //        db.execSQL("CREATE TABLE SAVED ("
 //                + "DATE TEXT, "
@@ -122,9 +117,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { {
-
-    } }
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { {} }
 
     private static void insertCardio (SQLiteDatabase db, String name, String intensity, String description, int resourceId ){
         ContentValues cardioValues = new ContentValues();
