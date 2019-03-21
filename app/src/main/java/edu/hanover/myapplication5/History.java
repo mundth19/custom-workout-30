@@ -24,8 +24,9 @@ public class History extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_history);
 
-        //below works
+        //create a listview for saved workouts
         ListView saved = (ListView) findViewById(R.id.SavedHistory);
+        //retrieve data from previous activity
         String cardioExercise = getIntent().getStringExtra("cardioExercise");
         String liftExercise = getIntent().getStringExtra("liftExercise");
         String yogaExercise = getIntent().getStringExtra("yogaExercise");
@@ -40,12 +41,11 @@ public class History extends AppCompatActivity {
 //                + "LIFT TEXT, "
 //                + "YOGA TEXT, "
 //                + "NOTES TEXT);");
-
+        //insert history into table, then query the table
         insertHistory(db, formattedDate, cardioExercise, liftExercise, yogaExercise, notes);
         Cursor h = db.query("SAVED", new String[] {"DATE", "CARDIO", "LIFT", "YOGA"}, null, null, null, null, null);
 
         ArrayList ar = new ArrayList();
-
         while (h.moveToNext()) {
             while(h.isNull(1) && h.isLast()==false){
                 h.moveToNext();
@@ -58,14 +58,15 @@ public class History extends AppCompatActivity {
             }
         }
 
-            ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ar);
-            saved.setAdapter(ad);
+        ArrayAdapter ad = new ArrayAdapter(this, android.R.layout.simple_list_item_1, ar);
+        saved.setAdapter(ad);
 
-        ActionBar actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar(); //allow back button on the action bar
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
+    //allows action bar/back button
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -74,7 +75,7 @@ public class History extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
+    //clears the database on the click of the button
     public void onClickClearHistory(View view) {
         SQLiteDatabase db = openOrCreateDatabase("saved", MODE_PRIVATE, null);
         db.delete("saved", null, null);

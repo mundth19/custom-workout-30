@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,10 +12,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void onClickIntensity(View v){
+    //on click, takes user to create a workout
+    public void onClickNewWorkout(View v){
         Intent intent = new Intent(this, ExerciseSelect.class);
         startActivity(intent);
     }
+    //on click, takes user to view history
     public void onClickHistory(View v){
         Intent intent = new Intent(this, History.class);
         startActivity(intent);

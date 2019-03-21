@@ -29,13 +29,12 @@ public class Workout extends AppCompatActivity {
         String cardioholder = getIntent().getStringExtra("cardiotext");
         String intensityholder = getIntent().getStringExtra("intensitytext");
         String muscleholder = getIntent().getStringExtra("muscletext");
-        String formattedDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
 
         CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
         CheckBox checkBox2 = (CheckBox) findViewById(R.id.checkBox2);
         CheckBox checkBox3 = (CheckBox) findViewById(R.id.checkBox3);
 
-       //get Cardio method
+       //get Cardio method - should be a function, but app kept crashing when making functions
         SQLiteDatabase db = openOrCreateDatabase("workouts",MODE_PRIVATE,null);
         Cursor cc = db.query("CARDIO", new String[] {"NAME", "INTENSITY", "DESCRIPTION"},
                 "NAME = ? AND INTENSITY = ?", new String [] {cardioholder, intensityholder},
@@ -47,13 +46,14 @@ public class Workout extends AppCompatActivity {
         }
         cc.close();
 
+        //add link to exercises
         TextView liftvids = (TextView) findViewById(R.id.textView3);
         liftvids.setClickable(true);
         liftvids.setMovementMethod(LinkMovementMethod.getInstance());
         String text = "https://www.youtube.com/playlist?list=PLyP03Zd31OhMJWdIkpZBhq5MsUix3qHJU";
         liftvids.setText("Lifting Tutorials  ");
         liftvids.append(Html.fromHtml(text));
-
+        //get lifting method - should be a function, but app kept crashing when making functions
         Cursor lc = db.query("LIFTING", new String[] {"NAME", "INTENSITY", "DESCRIPTION"},
                 "NAME = ? AND INTENSITY = ?", new String[]{muscleholder, intensityholder},
                 null,null,null);
@@ -73,14 +73,14 @@ public class Workout extends AppCompatActivity {
         checkBox2.append(lifts.get(2));
 
         lc.close();
-
+        //add link for stretches
         TextView stretchvids = (TextView) findViewById(R.id.textView6);
         stretchvids.setClickable(true);
         stretchvids.setMovementMethod(LinkMovementMethod.getInstance());
         String link = "https://www.youtube.com/playlist?list=PLyP03Zd31OhMJWdIkpZBhq5MsUix3qHJU";
         stretchvids.setText("Stretching Tutorials  ");
         stretchvids.append(Html.fromHtml(link));
-
+        ////get yoga method - should be a function, but app kept crashing when making functions
         Cursor yc = db.query("YOGA", new String[] {"NAME", "DESCRIPTION"},
                 "NAME = ?", new String[]{muscleholder}, null, null,null);
         if (yc.moveToFirst()) {
@@ -108,5 +108,3 @@ public class Workout extends AppCompatActivity {
         startActivity(intent);
     }
 }
-
-

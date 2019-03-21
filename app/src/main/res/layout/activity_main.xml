@@ -45,7 +45,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.656"
-        android:onClick="onClickIntensity"/>
+        android:onClick="onClickNewWorkout"/>
 
     <Button
         android:id="@+id/button2"
