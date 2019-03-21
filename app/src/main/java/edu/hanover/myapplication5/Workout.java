@@ -30,9 +30,9 @@ public class Workout extends AppCompatActivity {
         String intensityholder = getIntent().getStringExtra("intensitytext");
         String muscleholder = getIntent().getStringExtra("muscletext");
 
-        CheckBox checkBox = (CheckBox) findViewById(R.id.checkBox);
-        CheckBox checkBox2 = (CheckBox) findViewById(R.id.checkBox2);
-        CheckBox checkBox3 = (CheckBox) findViewById(R.id.checkBox3);
+        CheckBox checkBoxCardio = (CheckBox) findViewById(R.id.checkBox);
+        CheckBox checkBoxLift = (CheckBox) findViewById(R.id.checkBox2);
+        CheckBox checkBoxYoga = (CheckBox) findViewById(R.id.checkBox3);
 
        //get Cardio method - should be a function, but app kept crashing when making functions
         SQLiteDatabase db = openOrCreateDatabase("workouts",MODE_PRIVATE,null);
@@ -42,7 +42,7 @@ public class Workout extends AppCompatActivity {
 
         if (cc.moveToFirst()){
             String cdescriptionText = cc.getString(2);
-            checkBox.setText(cdescriptionText);
+            checkBoxCardio.setText(cdescriptionText);
         }
         cc.close();
 
@@ -66,11 +66,11 @@ public class Workout extends AppCompatActivity {
         while (lc.moveToNext()){
             String ldescriptionText = lc.getString(2);
             lifts.add(ldescriptionText);
-            Collections.shuffle(lifts);
+            Collections.shuffle(lifts); //shuffles list of workouts
         }
-        checkBox2.setText(lifts.get(0) + "\n"+ "\n");
-        checkBox2.append(lifts.get(1));
-        checkBox2.append(lifts.get(2));
+        checkBoxLift.setText(lifts.get(0) + "\n"+ "\n");
+        checkBoxLift.append(lifts.get(1));
+        checkBoxLift.append(lifts.get(2)); //randomly selects the first 2 workouts after being shuffled
 
         lc.close();
         //add link for stretches
@@ -85,11 +85,11 @@ public class Workout extends AppCompatActivity {
                 "NAME = ?", new String[]{muscleholder}, null, null,null);
         if (yc.moveToFirst()) {
             String ydescriptionText = yc.getString(1);
-            checkBox3.setText(ydescriptionText +"\n"+"\n");
+            checkBoxYoga.setText(ydescriptionText +"\n"+"\n");
         }
         while (yc.moveToNext()){
             String ydescriptionText = yc.getString(1);
-            checkBox3.append(ydescriptionText+"\n"+"\n");
+            checkBoxYoga.append(ydescriptionText+"\n"+"\n");
         }
         yc.close();
         db.close();
