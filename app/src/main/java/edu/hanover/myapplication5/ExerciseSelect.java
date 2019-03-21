@@ -86,7 +86,6 @@ public class ExerciseSelect extends AppCompatActivity {
                 TextView textViewIntensity = (TextView)findViewById(R.id.textView8);
                 TextView textViewMuscle = (TextView)findViewById(R.id.textView9);
                 Intent intent = new Intent(ExerciseSelect.this, Workout.class);
-                //intents allow the app to remember what was selected when going to the next activity
                 intent.putExtra("cardiotext", textViewCardio.getText().toString());
                 intent.putExtra("intensitytext", textViewIntensity.getText().toString());
                 intent.putExtra("muscletext", textViewMuscle.getText().toString());
