@@ -22,8 +22,6 @@
             android:name=".Workout"
             android:windowSoftInputMode="stateHidden" />
         <activity android:name=".ExerciseSelect" />
-        <activity android:name=".getCardio"/>
-        <activity android:name=".getLift"/>
     </application>
 
 </manifest>

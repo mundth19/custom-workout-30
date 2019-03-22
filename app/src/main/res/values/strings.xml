@@ -2,6 +2,20 @@
     <string name="app_name">Custom-Workout-30</string>
     <string name="liftingvideos">https://www.youtube.com/playlist?list=PLyP03Zd31OhMJWdIkpZBhq5MsUix3qHJU</string>
     <string name="stretchingvideos">https://www.youtube.com/playlist?list=PLyP03Zd31OhM0L18jWWPmmiYKm_Cl0Rky</string>
+    <string name="intensity">INTENSITY</string>
+    <string name="cardio">CARDIO</string>
+    <string name="muscle_group">MUSCLE GROUP</string>
+    <string name="create_workout">CREATE WORKOUT</string>
+    <string name="clear_history">CLEAR HISTORY</string>
+    <string name="your_history">Your History:</string>
+    <string name="welcome">Welcome! Please select an option:</string>
+    <string name="new_workout">Create New Workout</string>
+    <string name="view_history">View Workout History</string>
+    <string name="save">Save Workout</string>
+    <string name="notes">Workout Notes</string>
+    <string name="cardioselect">TextView</string>
+    <string name="intensityselect">TextView</string>
+    <string name="muscleselect">TextView</string>
     <string-array name="options">
         <item>Running</item>
         <item>Biking</item>
