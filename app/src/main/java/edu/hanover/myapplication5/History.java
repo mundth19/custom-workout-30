@@ -1,5 +1,7 @@
 package edu.hanover.myapplication5;
 
+//this class stores the history of all completed workouts and is linked to the workout class (where it gets the data from)
+
 import android.support.v7.app.ActionBar;
 import android.content.Intent;
 import android.database.Cursor;
@@ -43,7 +45,8 @@ public class History extends AppCompatActivity {
 //                + "NOTES TEXT);");
         //insert history into table, then query the table
         insertHistory(db, formattedDate, cardioExercise, liftExercise, yogaExercise, notes);
-        Cursor h = db.query("SAVED", new String[] {"DATE", "CARDIO", "LIFT", "YOGA"}, null, null, null, null, null);
+        Cursor h = db.query("SAVED", new String[] {"DATE", "CARDIO", "LIFT", "YOGA"},
+                null, null, null, null, null);
 
         ArrayList ar = new ArrayList();
         while (h.moveToNext()) {

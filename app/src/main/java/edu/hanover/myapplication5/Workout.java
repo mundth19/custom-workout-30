@@ -1,5 +1,9 @@
 package edu.hanover.myapplication5;
 
+//this class determines the random workout that the user will complete based on what they selected
+//in the exercise select class
+//this class will then send the data to the history class to be stored for future reference
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -81,13 +85,15 @@ public class Workout extends AppCompatActivity {
 
     public void onClickSave(View view) {
         Intent intent = new Intent(this, History.class);
-        String formattedDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
+        String formattedDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").
+                format(Calendar.getInstance().getTime());
         SQLiteDatabase db = openOrCreateDatabase("saved", MODE_PRIVATE, null);
         CheckBox checkboxC = (CheckBox) findViewById(R.id.checkBox);
         CheckBox checkboxL = (CheckBox) findViewById(R.id.checkBox2);
         CheckBox checkboxY = (CheckBox) findViewById(R.id.checkBox3);
         EditText editT = (EditText) findViewById(R.id.editText2);
-        insertHistory(db, formattedDate, checkboxC.getText().toString(), checkboxL.getText().toString(), checkboxY.getText().toString(),
+        insertHistory(db, formattedDate, checkboxC.getText().toString(),
+                checkboxL.getText().toString(), checkboxY.getText().toString(),
                 editT.getText().toString());
         startActivity(intent);
     }

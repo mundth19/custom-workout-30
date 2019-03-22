@@ -1,5 +1,7 @@
 package edu.hanover.myapplication5;
 
+//a simple class to display the links of videos to workouts
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;

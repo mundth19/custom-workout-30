@@ -1,5 +1,7 @@
 package edu.hanover.myapplication5;
 
+//main activity to start the app, user will be taken to different class depending on what they wish to do
+
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

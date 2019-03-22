@@ -1,5 +1,8 @@
 package edu.hanover.myapplication5;
 
+//this class creates the database consisting of 4 tables; 3 of which contain workouts where the user will select from,
+// and 1 that contains history
+
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -113,7 +116,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 //                + "LIFT TEXT, "
 //                + "YOGA TEXT, "
 //                + "NOTES TEXT);");
-
 
     }
     @Override
