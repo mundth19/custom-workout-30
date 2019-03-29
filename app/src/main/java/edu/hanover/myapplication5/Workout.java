@@ -64,7 +64,6 @@ public class Workout extends AppCompatActivity {
         }
         checkBoxLift.setText(lifts.get(0) + "\n"+ "\n");
         checkBoxLift.append(lifts.get(1));
-        //checkBoxLift.append(lifts.get(2)); //randomly selects the first 2 workouts after being shuffled
 
         lc.close();
 

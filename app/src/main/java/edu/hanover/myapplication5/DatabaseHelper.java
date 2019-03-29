@@ -12,8 +12,8 @@ import java.util.Calendar;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     String formattedDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
-    private static final String DB_NAME = "workouts"; // the name of database
-    private static final int DB_VERSION = 1; //version of database
+    public static final String DB_NAME = "workouts"; // the name of database
+    public static final int DB_VERSION = 1; //version of database
     DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
@@ -129,6 +129,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cardioValues.put("DESCRIPTION", description);
         db.insert("CARDIO", null, cardioValues);
     }
+
     private static void insertLifting (SQLiteDatabase db, String name, String intensity, String description, int resourceId ){
         ContentValues liftingValues = new ContentValues();
         liftingValues.put("_id", resourceId);

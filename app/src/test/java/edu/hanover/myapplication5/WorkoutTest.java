@@ -1,16 +1,20 @@
 package edu.hanover.myapplication5;
-
+import org.junit.Assert;
+import org.junit.Test;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-
-import org.junit.Test;
-
-import static android.content.Context.MODE_PRIVATE;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class WorkoutTest {
-    public void cardioExerciseQueryWorks(){
 
+    @Test
+    public void onCreate() {
+
+    }
+
+    @Test
+    public void onClickSave() {
 
     }
 }
