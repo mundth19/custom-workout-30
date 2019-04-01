@@ -84,6 +84,8 @@ public class Workout extends AppCompatActivity {
 
     public void onClickSave(View view) {
         Intent intent = new Intent(this, History.class);
+        EditText notes = (EditText) findViewById(R.id.editText2);
+        intent.putExtra("notes", notes.getText().toString());
         String formattedDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").
                 format(Calendar.getInstance().getTime());
         SQLiteDatabase db = openOrCreateDatabase("saved", MODE_PRIVATE, null);

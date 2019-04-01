@@ -46,7 +46,7 @@ public class History extends AppCompatActivity {
 //                + "NOTES TEXT);");
         //insert history into table, then query the table
         insertHistory(db, formattedDate, cardioExercise, liftExercise, yogaExercise, notes);
-        Cursor h = db.query("SAVED", new String[] {"DATE", "CARDIO", "LIFT", "YOGA"},
+        Cursor h = db.query("SAVED", new String[] {"DATE", "CARDIO", "LIFT", "YOGA", "NOTES"},
                 null, null, null, null, null);
 
         ArrayList ar = new ArrayList();
@@ -59,6 +59,7 @@ public class History extends AppCompatActivity {
                 ar.add(h.getString(1));
                 ar.add(h.getString(2));
                 ar.add(h.getString(3));
+                ar.add(h.getString(4));
             }
         }
 
