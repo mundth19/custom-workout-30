@@ -121,7 +121,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) { {} }
 
-    private static void insertCardio (SQLiteDatabase db, String name, String intensity, String description, int resourceId ){
+    private static void insertCardio (SQLiteDatabase db, String name, String intensity,
+                                      String description, int resourceId ){
         ContentValues cardioValues = new ContentValues();
         cardioValues.put("_id", resourceId);
         cardioValues.put("NAME", name);
@@ -130,7 +131,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert("CARDIO", null, cardioValues);
     }
 
-    private static void insertLifting (SQLiteDatabase db, String name, String intensity, String description, int resourceId ){
+    private static void insertLifting (SQLiteDatabase db, String name, String intensity,
+                                       String description, int resourceId ){
         ContentValues liftingValues = new ContentValues();
         liftingValues.put("_id", resourceId);
         liftingValues.put("NAME", name);
@@ -147,7 +149,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert("YOGA", null, yogaValues);
     }
 
-    public static void insertHistory(SQLiteDatabase db, String date, String cardio, String lift, String yoga, String notes) {
+    public static void insertHistory(SQLiteDatabase db, String date, String cardio,
+                                     String lift, String yoga, String notes) {
         ContentValues historyValues = new ContentValues();
         historyValues.put("DATE", date);
         historyValues.put("CARDIO", cardio);

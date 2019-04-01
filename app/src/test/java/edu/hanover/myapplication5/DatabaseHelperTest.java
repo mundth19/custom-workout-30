@@ -35,7 +35,8 @@ public class DatabaseHelperTest extends AndroidTestCase {
     @Test
     public void insertHistoryTest() {
         DatabaseHelper databaseHelper = new DatabaseHelper(mContext);
-        databaseHelper.insertHistory(db, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime()),
+        databaseHelper.insertHistory(db, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+                        .format(Calendar.getInstance().getTime()),
                 "cardio", "lift", "yoga", "notes");
         assertNotNull(db);
     }

@@ -21,14 +21,16 @@ public class ExerciseSelect extends AppCompatActivity {
 
         final Spinner cardio = (Spinner) findViewById(R.id.spinner_cardio); //creates cardio dropdown
 
-        ArrayAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
+        ArrayAdapter adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         cardio.setAdapter(adapter);
         adapter.addAll("Running", "Biking", "Elliptical"); //add cardio exercises into dropdown
 
         final Spinner intensity = (Spinner) findViewById(R.id.spinner_intensity); //creates intensity dropdown
 
-        ArrayAdapter adapter1 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
+        ArrayAdapter adapter1 = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item);
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         intensity.setAdapter(adapter1);
         adapter1.addAll("Beginner", "Intermediate", "Advanced"); //add intensity options into dropdown
@@ -36,7 +38,8 @@ public class ExerciseSelect extends AppCompatActivity {
 
         final Spinner muscle = (Spinner) findViewById(R.id.spinner_muscle); //creates muscle group dropdown
 
-        ArrayAdapter adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item);
+        ArrayAdapter adapter2 = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         muscle.setAdapter(adapter2);
         adapter2.addAll("Upper Body", "Mid Body", "Lower Body"); //adds muscle groups into dropdown
@@ -60,7 +63,7 @@ public class ExerciseSelect extends AppCompatActivity {
             public void onItemSelected(
                     AdapterView<?> adapterView, View view,
                     int i, long l) {
-                String intensityexercise = intensity.getItemAtPosition(i).toString(); //had to add to textview in order to retrieve later
+                String intensityexercise = intensity.getItemAtPosition(i).toString();
                 TextView textViewI = (TextView)findViewById(R.id.textView8);
                 textViewI.setText(intensityexercise);
             }
@@ -73,7 +76,7 @@ public class ExerciseSelect extends AppCompatActivity {
             public void onItemSelected(
                     AdapterView<?> adapterView, View view,
                     int i, long l) {
-                String muscleexercise = muscle.getItemAtPosition(i).toString(); //had to add to textview in order to retrieve later
+                String muscleexercise = muscle.getItemAtPosition(i).toString();
                 TextView textViewM = (TextView)findViewById(R.id.textView9);
                 textViewM.setText(muscleexercise);
             }

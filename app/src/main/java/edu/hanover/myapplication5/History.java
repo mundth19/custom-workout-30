@@ -33,7 +33,8 @@ public class History extends AppCompatActivity {
         String liftExercise = getIntent().getStringExtra("liftExercise");
         String yogaExercise = getIntent().getStringExtra("yogaExercise");
         String notes = getIntent().getStringExtra("notes");
-        String formattedDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
+        String formattedDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+                .format(Calendar.getInstance().getTime());
 
         final SQLiteDatabase db = openOrCreateDatabase("saved", MODE_PRIVATE, null);
 

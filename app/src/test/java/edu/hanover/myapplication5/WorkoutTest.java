@@ -13,9 +13,11 @@ public class WorkoutTest {
         //testing cursor and seeing if it is pulling accurate, correct info
         //from database
         String muscleholder = "Upper Body";
-        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("workouts", null, null);
+        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("workouts",
+                null, null);
         Cursor yc = db.query("YOGA", new String[]{"NAME", "DESCRIPTION"},
-                "NAME = ?", new String[]{muscleholder}, null, null, null);
+                "NAME = ?", new String[]{muscleholder}, null,
+                null, null);
         if (yc.moveToFirst()) {
             String ydescriptionText = yc.getString(1);
             assert ydescriptionText == yc.getString(1);
