@@ -16,6 +16,7 @@
     <string name="cardioselect">TextView</string>
     <string name="intensityselect">TextView</string>
     <string name="muscleselect">TextView</string>
+    <string name="info">INFO</string>
     <string-array name="options">
         <item>Running</item>
         <item>Biking</item>
