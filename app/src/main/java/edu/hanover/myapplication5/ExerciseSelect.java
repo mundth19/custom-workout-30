@@ -51,7 +51,7 @@ public class ExerciseSelect extends AppCompatActivity {
                     int i, long l) {
                 //had to add exercise to textview in order to retrieve later
                 String cardioexercise = cardio.getItemAtPosition(i).toString();
-                TextView textViewC = (TextView)findViewById(R.id.textView7);
+                TextView textViewC = (TextView)findViewById(R.id.textViewC);
                 textViewC.setText(cardioexercise);
             }
 
@@ -64,7 +64,7 @@ public class ExerciseSelect extends AppCompatActivity {
                     AdapterView<?> adapterView, View view,
                     int i, long l) {
                 String intensityexercise = intensity.getItemAtPosition(i).toString();
-                TextView textViewI = (TextView)findViewById(R.id.textView8);
+                TextView textViewI = (TextView)findViewById(R.id.textViewI);
                 textViewI.setText(intensityexercise);
             }
 
@@ -77,7 +77,7 @@ public class ExerciseSelect extends AppCompatActivity {
                     AdapterView<?> adapterView, View view,
                     int i, long l) {
                 String muscleexercise = muscle.getItemAtPosition(i).toString();
-                TextView textViewM = (TextView)findViewById(R.id.textView9);
+                TextView textViewM = (TextView)findViewById(R.id.textViewM);
                 textViewM.setText(muscleexercise);
             }
 
@@ -85,7 +85,7 @@ public class ExerciseSelect extends AppCompatActivity {
                     AdapterView<?> adapterView) {}
         });
 
-        findViewById(R.id.button12).setOnClickListener( new View.OnClickListener() {
+        findViewById(R.id.createWorkout).setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 TextView textViewCardio = (TextView)findViewById(R.id.textView7);
