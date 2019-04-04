@@ -17,6 +17,7 @@
     <string name="intensityselect">TextView</string>
     <string name="muscleselect">TextView</string>
     <string name="info">INFO</string>
+    <string name="infoDescription">Welcome to CustomWorkout30! This is an app that will hopefully help with all of your workout needs. To create a new workout, click the \'Create New Workout\' button to get started. If you have completed a workout on this app before and wish to view your history, simply select \'view workout history\'. If you are starting a new workout, you will go on to choose your level of difficulty, what kind of cardio you wish to do, and what kind of muscles you wish to focus on. After your workout is finished, you will have the option to add notes to your workout (i.e. how much weight you lifted, etc). Once you produce your workout and finish it, you must click \'Save Workout\' so that it will be stored in your history.</string>
     <string-array name="options">
         <item>Running</item>
         <item>Biking</item>
