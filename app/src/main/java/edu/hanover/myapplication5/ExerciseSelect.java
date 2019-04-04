@@ -88,9 +88,9 @@ public class ExerciseSelect extends AppCompatActivity {
         findViewById(R.id.createWorkout).setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView textViewCardio = (TextView)findViewById(R.id.textView7);
-                TextView textViewIntensity = (TextView)findViewById(R.id.textView8);
-                TextView textViewMuscle = (TextView)findViewById(R.id.textView9);
+                TextView textViewCardio = (TextView)findViewById(R.id.textViewC);
+                TextView textViewIntensity = (TextView)findViewById(R.id.textViewI);
+                TextView textViewMuscle = (TextView)findViewById(R.id.textViewM);
                 Intent intent = new Intent(ExerciseSelect.this, Workout.class);
                 intent.putExtra("cardiotext", textViewCardio.getText().toString());
                 intent.putExtra("intensitytext", textViewIntensity.getText().toString());

@@ -15,7 +15,7 @@ public class WorkoutLinks extends AppCompatActivity {
         setContentView(R.layout.activity_workout);
 
         //add link to exercises
-        TextView liftvids = (TextView) findViewById(R.id.textView3);
+        TextView liftvids = (TextView) findViewById(R.id.textViewLiftingVids);
         liftvids.setClickable(true);
         liftvids.setMovementMethod(LinkMovementMethod.getInstance());
         String text = "https://www.youtube.com/playlist?list=PLyP03Zd31OhMJWdIkpZBhq5MsUix3qHJU";
@@ -23,7 +23,7 @@ public class WorkoutLinks extends AppCompatActivity {
         liftvids.append(Html.fromHtml(text));
 
         //add link for stretches
-        TextView stretchvids = (TextView) findViewById(R.id.textView6);
+        TextView stretchvids = (TextView) findViewById(R.id.textViewStretchingVids);
         stretchvids.setClickable(true);
         stretchvids.setMovementMethod(LinkMovementMethod.getInstance());
         String link = "https://www.youtube.com/playlist?list=PLyP03Zd31OhMJWdIkpZBhq5MsUix3qHJU";

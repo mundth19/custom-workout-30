@@ -7,25 +7,43 @@
     tools:context=".Workout">
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/checkBoxCardio"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8sp"
         android:layout_marginTop="8sp"
         android:layout_marginEnd="8sp"
+        android:layout_marginBottom="8dp"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.144" />
+
+    <CheckBox
+        android:id="@+id/checkBoxLift"
+        android:layout_width="0sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8sp"
         android:layout_marginBottom="8sp"
         android:textAlignment="center"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/checkBox2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528" />
+        app:layout_constraintVertical_bias="0.272" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/checkBoxYoga"
         android:layout_width="0sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8sp"
@@ -40,28 +58,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.343" />
-
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="0sp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8sp"
-        android:layout_marginTop="8sp"
-        android:layout_marginEnd="8sp"
-        android:layout_marginBottom="8sp"
-        android:textAlignment="center"
-        android:textColor="@color/colorAccent"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.596" />
+        app:layout_constraintVertical_bias="0.477" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editTextNotes"
         android:layout_width="368sp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8sp"
@@ -73,12 +73,13 @@
         android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.73" />
+        app:layout_constraintVertical_bias="0.708" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/textViewNotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8sp"
@@ -93,7 +94,7 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.677" />
+        app:layout_constraintVertical_bias="0.645" />
 
     <Button
         android:layout_width="wrap_content"
@@ -112,7 +113,7 @@
         app:layout_constraintVertical_bias="0.97" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewLiftingVids"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8sp"
@@ -123,15 +124,17 @@
         android:focusable="true"
         android:gravity="center"
         android:text="@string/liftingvideos"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.247" />
+        app:layout_constraintVertical_bias="0.358" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textViewStretchingVids"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8sp"
@@ -141,12 +144,14 @@
         android:focusable="true"
         android:gravity="center"
         android:text="@string/stretchingvideos"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.473" />
+        app:layout_constraintVertical_bias="0.55" />
 
 
 </android.support.constraint.ConstraintLayout>

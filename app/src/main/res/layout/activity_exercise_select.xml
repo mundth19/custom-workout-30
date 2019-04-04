@@ -131,7 +131,7 @@
         android:layout_height="42sp"
         android:gravity="center"
         android:text="@string/cardio"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorPrimary"
         android:textSize="35sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

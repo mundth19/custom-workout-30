@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Custom-Workout-30</string>
-    <string name="liftingvideos">https://www.youtube.com/playlist?list=PLyP03Zd31OhMJWdIkpZBhq5MsUix3qHJU</string>
-    <string name="stretchingvideos">https://www.youtube.com/playlist?list=PLyP03Zd31OhM0L18jWWPmmiYKm_Cl0Rky</string>
+    <string name="liftingvideos">Lifting Tutorials: https://www.youtube.com/playlist?list=PLyP03Zd31OhMJWdIkpZBhq5MsUix3qHJU</string>
+    <string name="stretchingvideos">Stretching Tutorials: https://www.youtube.com/playlist?list=PLyP03Zd31OhM0L18jWWPmmiYKm_Cl0Rky</string>
     <string name="intensity">INTENSITY</string>
     <string name="cardio">CARDIO</string>
     <string name="muscle_group">MUSCLE GROUP</string>

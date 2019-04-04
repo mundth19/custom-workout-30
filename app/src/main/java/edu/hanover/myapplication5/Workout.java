@@ -31,9 +31,9 @@ public class Workout extends AppCompatActivity {
         String intensityholder = getIntent().getStringExtra("intensitytext");
         String muscleholder = getIntent().getStringExtra("muscletext");
 
-        CheckBox checkBoxCardio = (CheckBox) findViewById(R.id.checkBox);
-        CheckBox checkBoxLift = (CheckBox) findViewById(R.id.checkBox2);
-        CheckBox checkBoxYoga = (CheckBox) findViewById(R.id.checkBox3);
+        CheckBox checkBoxCardio = (CheckBox) findViewById(R.id.checkBoxCardio);
+        CheckBox checkBoxLift = (CheckBox) findViewById(R.id.checkBoxLift);
+        CheckBox checkBoxYoga = (CheckBox) findViewById(R.id.checkBoxYoga);
 
        //get Cardio method - should be a function, but app kept crashing when making functions
         SQLiteDatabase db = openOrCreateDatabase("workouts",MODE_PRIVATE,null);
@@ -84,15 +84,15 @@ public class Workout extends AppCompatActivity {
 
     public void onClickSave(View view) {
         Intent intent = new Intent(this, History.class);
-        EditText notes = (EditText) findViewById(R.id.editText2);
+        EditText notes = (EditText) findViewById(R.id.editTextNotes);
         intent.putExtra("notes", notes.getText().toString());
         String formattedDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").
                 format(Calendar.getInstance().getTime());
         SQLiteDatabase db = openOrCreateDatabase("saved", MODE_PRIVATE, null);
-        CheckBox checkboxC = (CheckBox) findViewById(R.id.checkBox);
-        CheckBox checkboxL = (CheckBox) findViewById(R.id.checkBox2);
-        CheckBox checkboxY = (CheckBox) findViewById(R.id.checkBox3);
-        EditText editT = (EditText) findViewById(R.id.editText2);
+        CheckBox checkboxC = (CheckBox) findViewById(R.id.checkBoxCardio);
+        CheckBox checkboxL = (CheckBox) findViewById(R.id.checkBoxLift);
+        CheckBox checkboxY = (CheckBox) findViewById(R.id.checkBoxYoga);
+        EditText editT = (EditText) findViewById(R.id.editTextNotes);
         insertHistory(db, formattedDate, checkboxC.getText().toString(),
                 checkboxL.getText().toString(), checkboxY.getText().toString(),
                 editT.getText().toString());
