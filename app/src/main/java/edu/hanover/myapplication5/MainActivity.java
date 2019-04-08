@@ -1,7 +1,5 @@
 package edu.hanover.myapplication5;
 
-//main activity to start the app, user will be taken to different class depending on what they wish to do
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +9,17 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+
+/**
+ * The MainActivity class starts the app. The user will be taken to a different class
+ * depending on what they wish to do. Additionally, the info button provides instructions
+ * for how to use the app.
+ *
+ * @author Hannah Mundt
+ * @version 1.0
+ * @since 4/5/2019
+ *
+ */
 
 public class MainActivity extends AppCompatActivity {
 

@@ -1,12 +1,19 @@
 package edu.hanover.myapplication5;
 
-//a simple class to display the links of videos to workouts
-
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
+
+/**
+ * The WorkoutLinks class is a simple class to display the links of videos to workouts
+ *
+ * @author Hannah Mundt
+ * @version 1.0
+ * @since 4/5/2019
+ *
+ */
 
 public class WorkoutLinks extends AppCompatActivity {
     @Override

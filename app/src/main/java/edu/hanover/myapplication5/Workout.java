@@ -1,9 +1,5 @@
 package edu.hanover.myapplication5;
 
-//this class determines the random workout that the user will complete based on what they selected
-//in the exercise select class
-//this class will then send the data to the history class to be stored for future reference
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +15,17 @@ import java.util.Collections;
 import java.util.List;
 
 import static edu.hanover.myapplication5.DatabaseHelper.insertHistory;
+
+/**
+ * The Workout class determines the workout that the user will complete based on what types
+ * of exercise they selected from ExerciseSelect. This class will then send the workout data
+ * to the history class
+ *
+ * @author Hannah Mundt
+ * @version 1.0
+ * @since 4/5/2019
+ *
+ */
 
 public class Workout extends AppCompatActivity {
 
@@ -60,7 +67,7 @@ public class Workout extends AppCompatActivity {
         while (lc.moveToNext()){
             String ldescriptionText = lc.getString(2);
             lifts.add(ldescriptionText);
-            Collections.shuffle(lifts); //shuffles list of workouts
+            Collections.shuffle(lifts); //shuffles list of workouts, randomizes the lift exercises
         }
         checkBoxLift.setText(lifts.get(0) + "\n"+ "\n");
         checkBoxLift.append(lifts.get(1));

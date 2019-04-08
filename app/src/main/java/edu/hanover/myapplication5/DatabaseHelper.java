@@ -1,14 +1,22 @@
 package edu.hanover.myapplication5;
 
-//this class creates the database consisting of 4 tables; 3 of which contain workouts where the user will select from,
-// and 1 that contains history
-
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.content.ContentValues;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+/**
+ * The DatabaseHelper class creates a "workouts" database consisting of 4 tables;
+ * 3 of which contain exercises that will be generated as a workout, and the
+ * other one contains the user's saved workouts.
+ *
+ * @author Hannah Mundt
+ * @version 1.0
+ * @since 4/5/2019
+ *
+ */
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     String formattedDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")

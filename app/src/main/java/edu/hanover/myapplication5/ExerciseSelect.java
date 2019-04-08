@@ -1,8 +1,5 @@
 package edu.hanover.myapplication5;
 
-//this class is where the user selects (from dropdowns) the categories of exercises they want to complete.
-//this data will then be sent to the workout class where it will take the selected categories to randomly produce a workout.
-
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +8,16 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+/**
+ * The ExerciseSelect class is where the user selects the types of exercises they want to
+ * complete. This data will then be sent to the workout class via intents.
+ *
+ * @author Hannah Mundt
+ * @version 1.0
+ * @since 4/5/2019
+ *
+ */
 
 public class ExerciseSelect extends AppCompatActivity {
 
